@@ -13,3 +13,13 @@ As for now, the functionality of the code is following:
    
 <img width="374" alt="Telegram bot-message" src="https://github.com/aishasalim/cheap_flights_bot/assets/87562264/2db1c02e-5f29-412e-946f-92831775ed26">
 
+4. As for now, whenever there will be no more flight deals that will align with the requirements of the spreadsheets, the button "Finish!" will terminate the code.
+<img width="368" alt="Finish Button picture" src="https://github.com/aishasalim/cheap_flights_bot/assets/87562264/a62204dc-e46d-4104-aa96-4723727198e8">
+
+The project is not done yet. I am aiming at doing more functionality so that the user could enter:
+1. Passenger number and their type.
+2. Maximum stopover number.
+3. Flight class.
+4. Starting city they are flying from.
+5. Data from the Spreadsheets that they could post from the chat.
+
