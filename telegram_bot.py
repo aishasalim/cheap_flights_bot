@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 from flight_search import FlightSearch
 
+
 class Bot:
     def __init__(self, bot_token, data_manager):
         self.data_manager = data_manager
@@ -11,12 +12,20 @@ class Bot:
         self.set_handlers()
 
     def run_flight_search(self):
-        flight_search = FlightSearch(self.data_manager)
+        list_of_destinations = self.data_manager.list_of_destinations
+        flight_search = FlightSearch(self.data_manager, list_of_destinations)
         self.result_messages = flight_search.format_flights()
 
     def set_handlers(self):
         @self.bot.message_handler(commands=['start'])
         def startBot(message):
+            welcome_message = "This is a bot that will send you to the cheapest place you want! Type your city name."
+            self.bot.send_message(message.chat.id, welcome_message)
+
+        @self.bot.message_handler(func=lambda message: True)
+        def handle_city_name(message):
+            city_name = message.text
+            self.data_manager.retrieve_iata_code(city_name)
             self.run_flight_search()
             self.send_markup(message.chat.id)
 
