@@ -31,9 +31,7 @@ class DataManager:
             "adults": 1,
             "children": 0,
             "selected_cabins": "M",
-            "curr": "USD",
-            "max_sector_stopovers": 1,
-            "nights_in_dst_from": 7,
+            "curr": "USD"
         }
         respond = requests.get(self.kiwi_endpoint, params=body, headers=header)
         self.data_kiwi = respond.json()
