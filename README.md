@@ -21,10 +21,14 @@ As for now, whenever there are no more flight deals that will align with the req
 
 🔨 The project is not done yet. I am aiming at doing more functionality so that the user could enter:
 
-🧑‍🤝‍🧑 Passenger number and their type.
+🧑‍🤝‍🧑 Passenger number and their type. 
+
 🚏 Maximum stopover number.
+
 🛫 Flight class.
+
 🌇 Starting city they are flying from.
+
 💻 Data from the Spreadsheets that they could post from the chat.
 
 Feel free to contribute to make this bot even better! 🤝 Happy flying! 🌍✈️
