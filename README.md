@@ -20,16 +20,10 @@ As for now, whenever there are no more flight deals that will align with the req
 <img width="368" alt="Finish Button picture" src="https://github.com/aishasalim/cheap_flights_bot/assets/87562264/a62204dc-e46d-4104-aa96-4723727198e8">
 
 🔨 The project is not done yet. I am aiming at doing more functionality so that the user could enter:
-
-🧑‍🤝‍🧑 Passenger number and their type. 
-
-🚏 Maximum stopover number.
-
-🛫 Flight class.
-
-🌇 Starting city they are flying from.
-
-💻 Data from the Spreadsheets that they could post from the chat.
-
+🧑‍🤝‍🧑 Passenger number and their type. <br> 
+🚏 Maximum stopover number. <br> 
+🛫 Flight class. <br> 
+🌇 Starting city they are flying from. <br> 
+💻 Data from the Spreadsheets that they could post from the chat. <br> 
 Feel free to contribute to make this bot even better! 🤝 Happy flying! 🌍✈️
 
