@@ -27,3 +27,4 @@ As for now, whenever there are no more flight deals that will align with the req
 💻 Data from the Spreadsheets that they could post from the chat. <br> 
 Feel free to contribute to make this bot even better! 🤝 Happy flying! 🌍✈️
 
+The file GlobalAirportDatabase.txt was taken from open database that you can find on: http://www.partow.net/miscellaneous/airportdatabase/index.html#Downloads
