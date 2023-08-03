@@ -14,7 +14,14 @@ class DataManager:
         self.return_to = self.date_to + datetime.timedelta(10)
 
     def retrieve_iata_code(self, city_name):
-        print(city_name)
+        iata_codes = []
+        with open('GlobalAirportDatabase.txt', 'r') as file:
+            for line in file:
+                parts = line.strip().split(':')
+                if city_name.lower() in parts[3].lower() and parts[1] != 'N/A' and parts[2] != 'N/A':
+                    iata_codes.append((parts[2], parts[1]))
+        print(iata_codes)
+        return iata_codes
 
     def get_info_kiwi(self, fly_to):
         header = {
