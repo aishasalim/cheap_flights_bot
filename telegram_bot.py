@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 from flight_search import FlightSearch
 
+
 class Bot:
     def __init__(self, bot_token, data_manager):
         self.data_manager = data_manager
@@ -19,13 +20,11 @@ class Bot:
             markup.add(button)
         self.bot.send_message(chat_id, "Available IATA Codes:", reply_markup=markup)
 
-
     def handle_city_name(self, message):
         city_name = message.text
         iata_codes = self.data_manager.retrieve_iata_code(city_name)
         self.buttons_of_iata(message.chat.id, iata_codes)
-        self.run_flight_search()
-        self.send_markup(message.chat.id)
+        # self.send_markup(message.chat.id)
 
     def run_flight_search(self):
         list_of_destinations = self.data_manager.list_of_destinations
@@ -49,6 +48,8 @@ class Bot:
         def handle_iata_button(function_call):
             iata_code = function_call.data.split(':')[1]
             print(f"IATA Code pressed: {iata_code}")
+            self.data_manager.set_selected_iata_code(iata_code)  # Set the selected IATA code in data_manager
+            self.run_flight_search()  # Run the flight search immediately after setting the IATA code
             self.bot.answer_callback_query(function_call.id)
 
         @self.bot.callback_query_handler(func=lambda call: True)
@@ -81,3 +82,4 @@ class Bot:
             self.bot.infinity_polling()
         except Exception as e:
             print(f"An error occurred: {e}")
+
