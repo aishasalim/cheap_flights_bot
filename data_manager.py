@@ -7,6 +7,7 @@ class DataManager:
         self.kiwi_endpoint = kiwi_endpoint
         self.kiwi_token = kiwi_token
         self.list_of_destinations = list_of_destinations
+        self.selected_iata_code = None
 
         self.date_from = datetime.datetime.now().strftime("%d/%m/%Y")
         self.date_to = datetime.datetime.now() + datetime.timedelta(30)
@@ -23,13 +24,17 @@ class DataManager:
         print(iata_codes)
         return iata_codes
 
+    def set_selected_iata_code(self, iata_code):
+        self.selected_iata_code = iata_code
+        print(f"this is from data manager {iata_code}")
+
     def get_info_kiwi(self, fly_to):
         header = {
             "apikey": self.kiwi_token
         }
 
         body = {
-            "fly_from": "IAH",
+            "fly_from": self.selected_iata_code,
             "fly_to": fly_to,
             "date_from": self.date_from,
             "date_to": self.date_to.strftime("%d/%m/%Y"),
@@ -40,5 +45,6 @@ class DataManager:
             "selected_cabins": "M",
             "curr": "USD"
         }
+        print(body)
         respond = requests.get(self.kiwi_endpoint, params=body, headers=header)
         self.data_kiwi = respond.json()
